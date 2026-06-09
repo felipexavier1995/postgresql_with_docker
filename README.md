@@ -29,3 +29,10 @@ Com Docker, o mesmo container utilizado pelo desenvolvedor pode ser implantado d
 A criação e distribuição de aplicações tornam-se muito mais simples, pois basta disponibilizar a imagem Docker para que qualquer servidor compatível possa executá-la.
 
 Isso facilita processos de CI/CD (Integração Contínua e Entrega Contínua), permitindo implantações rápidas e automatizadas.
+
+✅ Escalabilidade
+
+Docker facilita a criação de múltiplas instâncias de uma aplicação para atender ao aumento da demanda.
+Em conjunto com ferramentas como Docker é possível distribuir containers automaticamente entre diversos servidores, garantindo alta disponibilidade.
+
+-------------------------------------------------------------
