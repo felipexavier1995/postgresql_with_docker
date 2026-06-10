@@ -80,8 +80,37 @@ echo \
 sudo apt update <p>
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin <p>
 
-📦 Verificar instalação <p>
-docker --version <p>
-docker compose version <p>
+
+Criar uma pasta para o projeto com o comando <p>
+mkdir ~/postgres-docker                       <p>
+cd ~/postgres-docker                          <p>
+
+Criar o arquivo docker-compose.yml (Criando um .yml com os dados do novo container)
+nano docker-compose.yml
+
+
+Cole esse conteúdo dentro do arquivo
+```text
+services:
+  postgres:
+    image: postgres:16
+    container_name: meu-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: meubanco
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+```
+
+Agora é subir o docker o container com o comando a seguir:
+
+docker compose up -d
 
 
