@@ -43,16 +43,45 @@ Em remote host, basta digitar o ip e username coloca root e a senha. E a porta �
 
 ✅ Já conectado ao servidor, vamos atualizar o sistemas, antes de fazer qualquer instalação dentro no servidor.
 
-# 1️⃣ No servidor, verificar se o SSH está rodando
+1️⃣ No servidor, verificar se o SSH está rodando
 sudo systemctl status ssh
 
-# 2️⃣ Se não estiver instalado
+2️⃣ Se não estiver instalado
 sudo apt install openssh-server -y
 
-# 3️⃣ Iniciar o SSH
+3️⃣ Iniciar o SSH
 sudo systemctl start ssh
 sudo systemctl enable ssh
 
+--------------------------------------------------------------
+# Preparo e instalação.
 
+📦 Atualizar o sistema. <p>
+sudo apt update && sudo apt upgrade -y
+
+📦 Instalar dependências. <p>
+sudo apt install -y ca-certificates curl gnupg lsb-release
+
+📦 Adicionar repositório oficial do Docker. <p>
+sudo install -m 0755 -d /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+📦 Instalar o Docker. <p>
+sudo apt update <p>
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin <p>
+
+📦 Verificar instalação <p>
+docker --version <p>
+docker compose version <p>
 
 
