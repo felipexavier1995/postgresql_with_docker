@@ -139,11 +139,14 @@ docker start meu-postgres
    [ RUNNING ]  ← container rodando novamente
 ```
 
-Agora com o Docker instalado e funcionando perfeitamente no servidor, vamos verificar o Docker no momento com o comando: docker ps
+Agora com o Docker instalado e funcionando perfeitamente no servidor, vamos verificar o Docker no momento com o comando: docker ps e docker logs meu-postgres
 
 <img width="1152" height="71" alt="image" src="https://github.com/user-attachments/assets/5495ea7d-a8e1-4739-b4d2-a62b04c3ef48" />
+<img width="690" height="354" alt="image" src="https://github.com/user-attachments/assets/9811f8e0-1d80-4626-b149-7eb789d5b735" />
 
- 
+Podemos desligar o docker com o comando: docker stop meu-postgres
+<img width="688" height="58" alt="image" src="https://github.com/user-attachments/assets/0882e993-bb92-4fa2-bf6a-f37016b4a747" />
 
+✅Agora com o docker instalado e funcioando, podemos entrar no banco de dados
 
 
