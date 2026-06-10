@@ -38,7 +38,20 @@ Ao entrar no servidor, digitar o ip addr para verificar o IP. É pegar o IP conf
 
 <img width="905" height="704" alt="image" src="https://github.com/user-attachments/assets/9f76f53e-d6e7-482a-be0f-df3fa5fffb6e" />
 
-Em remote host, basta digitar o ip e username coloca root e a senha
+Em remote host, basta digitar o ip e username coloca root e a senha. E a porta é sempre a 22, esse é o caminho para fazer uma conexão SSH.
+
+
+✅ Já conectado ao servidor, vamos atualizar o sistemas, antes de fazer qualquer instalação dentro no servidor.
+
+# 1️⃣ No servidor, verificar se o SSH está rodando
+sudo systemctl status ssh
+
+# 2️⃣ Se não estiver instalado
+sudo apt install openssh-server -y
+
+# 3️⃣ Iniciar o SSH
+sudo systemctl start ssh
+sudo systemctl enable ssh
 
 
 
