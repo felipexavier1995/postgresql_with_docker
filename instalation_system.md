@@ -108,9 +108,42 @@ services:
 volumes:
   pgdata:
 ```
+Agora dentro do diretorio /root/postgres-docker vamos digitar o comando ls -lrth para verificar o arquivo criado.
+<img width="514" height="107" alt="image" src="https://github.com/user-attachments/assets/04815ab5-09cd-4111-817d-8169eb47594a" />
 
 Agora é subir o docker o container com o comando a seguir:
-
 docker compose up -d
+<img width="632" height="73" alt="image" src="https://github.com/user-attachments/assets/095edee9-beaf-4209-a63f-dd8b9d2f395f" />
+
+📋 Atenção para ser anotado com alguns comandos do Docker 📋
+| Comando | O que faz | Quando usar |
+|---|---|---|
+| docker compose up -d | Crie e inicia o container inicial | Primeira vez ou após mudança no compose
+| docker start [meu_banco] | Apenas inicia um container já existente | Quando o container foi parado
+| docker stop [meu_banco] | Parar o container | Quando quer parar o banco
+
+Podemos criar um Ciclo de Vida de um Container.
+```text
+docker compose up -d
+        ↓
+   [ CREATED ]  ← container criado
+        ↓
+   [ RUNNING ]  ← container rodando
+        ↓
+docker stop meu-postgres
+        ↓
+   [ STOPPED ]  ← container parado (mas ainda existe!)
+        ↓
+docker start meu-postgres
+        ↓
+   [ RUNNING ]  ← container rodando novamente
+```
+
+Agora com o Docker instalado e funcionando perfeitamente no servidor, vamos verificar o Docker no momento com o comando: docker ps
+
+<img width="1152" height="71" alt="image" src="https://github.com/user-attachments/assets/5495ea7d-a8e1-4739-b4d2-a62b04c3ef48" />
+
+ 
+
 
 
