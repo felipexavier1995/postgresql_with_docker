@@ -1,4 +1,4 @@
-Instalação e Conexão com Dbeaver no linux ubuntu
+# ⚙️ Instalação e Conexão com Dbeaver no linux ubuntu
 
 A instalação do Dbeaver é feito atraves do seguinte link
 https://dbeaver.io/download/
@@ -26,4 +26,4 @@ E colocar os parametros do nosso banco de dados
 A seguir contem a nossa conexão e validado <p>
 <img width="366" height="498" alt="image" src="https://github.com/user-attachments/assets/211003c3-d4ae-4593-b689-790d5b292dde" />
 
-Ultilizar o Dbeaver no nosso servidor é fundamental para a organização das queries, schemas e views de uma forma rapida e simplificado.
+A ultilização do Dbeaver no nosso servidor é fundamental para a organização das queries, schemas , views e jobs de uma forma rapida e simplificado. 😊
