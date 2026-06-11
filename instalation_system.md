@@ -147,6 +147,13 @@ Agora com o Docker instalado e funcionando perfeitamente no servidor, vamos veri
 Podemos desligar o docker com o comando: docker stop meu-postgres
 <img width="688" height="58" alt="image" src="https://github.com/user-attachments/assets/0882e993-bb92-4fa2-bf6a-f37016b4a747" />
 
-✅Agora com o docker instalado e funcioando, podemos entrar no banco de dados
+✅Agora com o docker instalado e funcioando, podemos entrar no banco de dados.
+
+Vamos acessar com o comando docker exec -it meu-postgres psql -U admin -d meubanco
+Ao digitar vai ser apresentado como meubanco=#
+<img width="908" height="170" alt="image" src="https://github.com/user-attachments/assets/1163e520-10a8-4768-a065-b8562aa61e3c" />
+
+🎉 Finalmente já estamos dentro do Postgresql que está dentro do container.
+
 
 
