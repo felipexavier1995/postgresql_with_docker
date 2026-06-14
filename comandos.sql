@@ -14,3 +14,9 @@ docker exec -it meu-postgres psql -U admin -d meubanco
 
 -- Visualizar em qual banco de dados está conectado.
 \conninfo
+
+--- Comando para sair do postgresql
+\q
+
+-- Visualizar o tempo de execução
+\timing
