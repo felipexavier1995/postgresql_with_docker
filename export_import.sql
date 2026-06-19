@@ -42,3 +42,9 @@ docker exec -i meu-postgres psql -U admin -d meubanco < backup.sql
 
 -- admin = usuário para entrar do banco
 -- backup.sql = nome do arquivo 
+
+-- Podemos realizar tambem um import e export com um schema especifico:
+docker exec meu-postgres pg_dump -U admin -n [schemas] meubanco > backup_schemas.sql
+docker exec -i meu-postgres psql -U admin -d meubanco < backup_schemas.sql
+
+
