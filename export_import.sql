@@ -1,6 +1,6 @@
 -- Acessando ao servidor em questão do docker, entrar no docker com o seguinte comando:
 
-docker exer -it meu-postgres psql -U admin -d meubanco 
+docker exec -it meu-postgres psql -U admin -d meubanco 
 
 -- Já acessando ao banco de dados, como teste vamos precisar criar um uma tabela e alguns dados nela.
 -- Com os comandos a seguir.
