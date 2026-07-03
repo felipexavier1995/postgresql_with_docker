@@ -13,8 +13,18 @@ Manutenção: alterações na lógica ficam centralizadas na view
 */
 -- Como exemplo, vamos utilizar um banco de dados para demonstrar conhecimento sobre:
 
+-- necessitamos criar um banco de dados para com isso, vamos criar alguns scripts e alimentar com alguns dados nas tabelas:
+/*
+departments  ──┐
+               ├──► employees ──► salaries
+positions    ──┘
+*/
 
-DROP TABLE IF EXISTS salaries    CASCADE;
-DROP TABLE IF EXISTS employees   CASCADE;
-DROP TABLE IF EXISTS positions   CASCADE;
-DROP TABLE IF EXISTS departments CASCADE;
+-- 1. Departments
+CREATE TABLE departments (
+    id          SERIAL PRIMARY KEY,
+    name        VARCHAR(100) NOT NULL UNIQUE,
+    location    VARCHAR(100),
+    budget      NUMERIC(15,2),
+    created_at  TIMESTAMP DEFAULT NOW()
+);
