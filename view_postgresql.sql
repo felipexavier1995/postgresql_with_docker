@@ -49,3 +49,41 @@ CREATE TABLE employees (
     is_active       BOOLEAN DEFAULT TRUE
 );
 
+-- 4. Salaries
+CREATE TABLE salaries (
+    id              SERIAL PRIMARY KEY,
+    employee_id     INT NOT NULL REFERENCES employees(id),
+    amount          NUMERIC(10,2) NOT NULL,
+    effective_date  DATE NOT NULL,
+    end_date        DATE
+);
+
+-- Insert de dados (DML)
+-- Departments
+INSERT INTO departments (name, location, budget) VALUES
+    ('Engineering',  'São Paulo',      500000.00),
+    ('Marketing',    'Rio de Janeiro', 200000.00),
+    ('Finance',      'São Paulo',      300000.00),
+    ('HR',           'Curitiba',       150000.00);
+
+-- Positions
+INSERT INTO positions (title, level) VALUES
+    ('Software Engineer',   'mid'),
+    ('Senior Engineer',     'senior'),
+    ('Engineering Manager', 'manager'),
+    ('Marketing Analyst',   'junior'),
+    ('Marketing Lead',      'lead'),
+    ('Financial Analyst',   'mid'),
+    ('HR Specialist',       'mid');
+
+-- Employees
+INSERT INTO employees (department_id, position_id, first_name, last_name, email, hire_date) VALUES
+    (1, 3, 'Lucas',    'Ferreira', 'lucas.ferreira@hr.com',  '2019-03-10'),
+    (1, 2, 'Ana',      'Costa',    'ana.costa@hr.com',       '2020-07-01'),
+    (1, 1, 'Bruno',    'Lima',     'bruno.lima@hr.com',      '2022-01-15'),
+    (1, 1, 'Carla',    'Souza',    'carla.souza@hr.com',     '2023-05-20'),
+    (2, 5, 'Diego',    'Alves',    'diego.alves@hr.com',     '2020-11-03'),
+    (2, 4, 'Fernanda', 'Rocha',    'fernanda.rocha@hr.com',  '2021-08-22'),
+    (3, 6, 'Gabriel',  'Nunes',    'gabriel.nunes@hr.com',   '2018-06-14'),
+    (3, 6, 'Helena',   'Martins',  'helena.martins@hr.com',  '2021-02-28'),
+    (4, 7, 'Igor',     'Pinto',    'igor.pinto@hr.com',      '2022-09-05');
