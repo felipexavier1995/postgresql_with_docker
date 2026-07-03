@@ -2,6 +2,7 @@
 
 /*
 Uma View é uma consulta SQL salva no banco de dados que funciona como uma tabela virtual. Ela não armazena dados por si só — toda vez que é consultada, executa a query definida na sua criação.
+Em tese é um script pré pronto que podemos alterar alguns parametros.
 
 Vantagens
 
