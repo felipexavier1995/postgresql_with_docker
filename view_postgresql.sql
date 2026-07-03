@@ -87,3 +87,20 @@ INSERT INTO employees (department_id, position_id, first_name, last_name, email,
     (3, 6, 'Gabriel',  'Nunes',    'gabriel.nunes@hr.com',   '2018-06-14'),
     (3, 6, 'Helena',   'Martins',  'helena.martins@hr.com',  '2021-02-28'),
     (4, 7, 'Igor',     'Pinto',    'igor.pinto@hr.com',      '2022-09-05');
+
+-- Salaries (com histórico de reajustes)
+INSERT INTO salaries (employee_id, amount, effective_date, end_date) VALUES
+    (1, 12000.00, '2019-03-10', '2021-03-09'),
+    (1, 16000.00, '2021-03-10', NULL),
+    (2, 11000.00, '2020-07-01', '2022-06-30'),
+    (2, 14000.00, '2022-07-01', NULL),
+    (3,  8000.00, '2022-01-15', NULL),
+    (4,  7500.00, '2023-05-20', NULL),
+    (5,  9000.00, '2020-11-03', NULL),
+    (6,  6000.00, '2021-08-22', NULL),
+    (7, 10000.00, '2018-06-14', '2022-06-13'),
+    (7, 12500.00, '2022-06-14', NULL),
+    (8,  9500.00, '2021-02-28', NULL),
+    (9,  7000.00, '2022-09-05', NULL);
+
+-- Criando a View (vw_employee_current_salary)
