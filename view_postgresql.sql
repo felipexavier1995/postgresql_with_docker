@@ -28,3 +28,24 @@ CREATE TABLE departments (
     budget      NUMERIC(15,2),
     created_at  TIMESTAMP DEFAULT NOW()
 );
+
+-- 2. Positions
+CREATE TABLE positions (
+    id          SERIAL PRIMARY KEY,
+    title       VARCHAR(100) NOT NULL,
+    level       VARCHAR(20) CHECK (level IN ('junior','mid','senior','lead','manager')),
+    created_at  TIMESTAMP DEFAULT NOW()
+);
+
+-- 3. Employees
+CREATE TABLE employees (
+    id              SERIAL PRIMARY KEY,
+    department_id   INT REFERENCES departments(id),
+    position_id     INT REFERENCES positions(id),
+    first_name      VARCHAR(50) NOT NULL,
+    last_name       VARCHAR(50) NOT NULL,
+    email           VARCHAR(100) NOT NULL UNIQUE,
+    hire_date       DATE NOT NULL DEFAULT CURRENT_DATE,
+    is_active       BOOLEAN DEFAULT TRUE
+);
+
