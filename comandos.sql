@@ -20,3 +20,9 @@ docker exec -it meu-postgres psql -U admin -d meubanco
 
 -- Visualizar o tempo de execução
 \timing
+
+-- Visualizar todas as view 
+\dv
+
+-- Visualizar todos os schemas
+\dn
