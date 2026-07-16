@@ -26,3 +26,6 @@ docker exec -it meu-postgres psql -U admin -d meubanco
 
 -- Visualizar todos os schemas
 \dn
+
+-- Visualizar com detalhes cada coluna da tabela
+\d+ --(nome da tabela)
