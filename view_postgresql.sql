@@ -105,3 +105,24 @@ INSERT INTO salaries (employee_id, amount, effective_date, end_date) VALUES
     (9,  7000.00, '2022-09-05', NULL);
 
 -- Criando a View (vw_employee_current_salary)
+/*
+  Ao criar a view abaixo vamos apenas chamar ela para simplificar.
+*/
+CREATE OR REPLACE VIEW vw_employee_current_salary AS 
+SELECT
+    e.id                                    AS employee_id,
+    e.first_name || ' ' || e.last_name      AS full_name,
+    d.name                                  AS department,
+    p.title                                 AS position,
+    p.level                                 AS level,
+    s.amount                                AS current_salary,
+    s.effective_date                        AS salary_since,
+    e.hire_date
+FROM employees e
+JOIN departments d ON d.id = e.department_id
+JOIN positions   p ON p.id = e.position_id
+JOIN salaries    s ON s.employee_id = e.id
+                  AND s.end_date IS NULL;
+
+-- A chamada da view será feita desse modo.
+SELECT * FROM vw_employee_current_salary;
